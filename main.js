@@ -10,6 +10,8 @@ const igual=document.querySelector('#igual')
 const borrar=document.querySelector('#borrar')
 
 
+
+
 igual.addEventListener('click',()=>{
 
 
@@ -18,16 +20,16 @@ let b=+valor[1].value
 
     if(operador.textContent==='+'){
 
-      display.innerText= a+b
+      display.innerText= b+a
 
     }else if(operador.textContent==='-'){
-        display.innerText= a-b
+        display.innerText= b-a
 
     }else if (operador.textContent==='*'){
-        display.innerText= a*b
+        display.innerText= b*a
 
     }else if(operador.textContent==='/'){
-        display.innerText= a/b
+        display.innerText= b/a
     }else
     {
         display.innerText= 'error'
@@ -41,6 +43,8 @@ suma.addEventListener('click',()=>{
 
 
     operador.textContent='+'
+    valor[1].value=valor[0].value
+    valor[0].value=''
 
 })
 
@@ -48,6 +52,9 @@ resta.addEventListener('click',()=>{
 
 
     operador.textContent='-'
+    valor[1].value=valor[0].value
+    valor[0].value=''
+
 
 })
 
@@ -55,6 +62,9 @@ multi.addEventListener('click',()=>{
 
 
     operador.textContent='*'
+    valor[1].value=valor[0].value
+    valor[0].value=''
+
 
 })
 
@@ -62,5 +72,15 @@ division.addEventListener('click',()=>{
 
 
     operador.textContent='/'
+
+})
+
+borrar.addEventListener('click',()=>{
+  
+    display.textContent=''
+  valor[0].value=''
+   
+
+    
 
 })
